@@ -199,3 +199,25 @@
     border-radius: 8px;
   }
   
+  @media (max-width: 700px) {
+    .left-side {
+      display: none;
+      background: url('https://scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/414924268_122150041688027223_9180924344096571771_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3635dc&_nc_ohc=NAKAbwUFProAX_R3I5N&_nc_ht=scontent.fadd2-1.fna&oh=00_AfDkRHIxiXN2PQ6H3OT4TpdD72a5wuOu9NdgRHj8zvSCVg&oe=65CFD9B7');
+      background-position: center;
+      background-size: cover;
+      position: relative;
+  }
+  .right-side{
+    margin-top: 100px;
+  }
+  .checkout-container {
+    /* background-color: red; */
+    max-width: 120rem;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 10rem; */
+}
+
+  }

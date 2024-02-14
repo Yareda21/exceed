@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>    
+    <title>Payment</title>    
     <script
       src="https://kit.fontawesome.com/bb515311f9.js"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/pay.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
 </head>
 <body>
-    
+  <header class="main-header clearfix" role="header">
+ 
+    <div class="logo">
+      <a href=""><em>Exceed</em> Training</a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="index.html#section1">Home</a></li>
+        <li class="has-submenu"><a href="index.html#section2">About Us</a>
+          <ul class="sub-menu">
+            <li><a href="index.html#section2">Who we are?</a></li>
+            <li><a href="index.html#section3">What we do?</a></li>
+            <li><a href="index.html#section3">How it works?</a></li>
+            <li><a href="payment.html" rel="sponsored" class="external">Payment URL</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#section4">Courses</a></li>
+        <li><a href="index.html#section6">Contact</a></li>
+        <li><a href="payment.html" class="external">Payment</a></li>
+      </ul>
+    </nav>
+
+  </header>
     <!-- Font Awesome -->
 
 
     <title>Card Checkout</title>
-  <body>
-    <div class="checkout-container">
+  <main>
+    <div class="checkout-container " style="margin-top: 100px;">
       <div class="left-side">
         <div class="text-box">
           <h1 class="home-heading">Payment</h1>
@@ -32,7 +67,7 @@
 
       <div class="right-side">
         <div class="receipt">
-          <h2 class="receipt-heading">Receipt Summary</h2>
+          <h2 class="receipt-heading">Payment Information</h2>
           <!-- <div>
             <table class="table">
               <tr>
@@ -60,13 +95,20 @@
         </div>
 
         <div class="payment-info">
-          <h3 class="payment-heading">Payment Information</h3>
+          
+
           <form
             class="form-box"
             enctype="text/plain"
             method="get"
             target="_blank"
           >
+            <h1 style="text-align: center;">Banking Information</h1>
+            <h2 style="text-align: center;">Commercial Bank of Ethiopia</h2>
+            <h2 style="text-align: center; margin-bottom: 20px;">Tilahun Kebede: - 1000558453129</h2>
+
+            <h2 class="receipt-heading" style="margin: 0;">Online Payment Information</h2>
+            <hr>
             <div>
               <label for="full-name">Full Name</label>
               <input
@@ -151,7 +193,66 @@
         </div>
       </div>
     </div>
-  </body>
+  </main>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+      //according to loftblog tut
+      $('.nav li:first').addClass('active');
+
+      var showSection = function showSection(section, isAnimate) {
+        var
+        direction = section.replace(/#/, ''),
+        reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+        reqSectionPos = reqSection.offset().top - 0;
+
+        if (isAnimate) {
+          $('body, html').animate({
+            scrollTop: reqSectionPos },
+          800);
+        } else {
+          $('body, html').scrollTop(reqSectionPos);
+        }
+
+      };
+
+      var checkSection = function checkSection() {
+        $('.section').each(function () {
+          var 
+          $this = $(this),
+          topEdge = $this.offset().top - 80,
+          bottomEdge = topEdge + $this.height(),
+          wScroll = $(window).scrollTop();
+          if (topEdge < wScroll && bottomEdge > wScroll) {
+            var
+            currentId = $this.data('section'),
+            reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+            reqLink.closest('li').addClass('active').
+            siblings().removeClass('active');
+          }
+        });
+      };
+
+      $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+        if($(e.target).hasClass('external')) {
+          return;
+        }
+        e.preventDefault();
+        $('#menu').removeClass('active');
+        showSection($(this).attr('href'), true);
+      });
+
+      $(window).scroll(function () {
+        checkSection();
+      });
+  </script>
 </body>
 </html>
