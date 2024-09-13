@@ -1712,7 +1712,6 @@ iframe {
 .social-container h3 {
     text-align: center;
     color: #0088cc;
-
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 20px;
@@ -1725,3 +1724,4 @@ iframe {
         margin: 0 auto; /* Center the element */
     }
 }
+
