@@ -583,8 +583,7 @@ section.why-us {
     display: block;
     margin-bottom: 0.75em;
 }
-#tabs ul .ui-tabs-active {
-}
+
 #tabs ul .ui-tabs-active a {
     color: #f5a425;
 }
@@ -1665,7 +1664,13 @@ footer p a:hover {
     width: 80%;
     margin: auto;
 }
-
+.other-socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
 /* Frame styling */
 iframe {
     width: 100%;
@@ -1694,7 +1699,7 @@ iframe {
     margin-top: 60px;
     width: 100%;
     max-width: 500px;
-    height: 200px;
+    height: 100px;
     text-align: center;
     color: white;
 }
